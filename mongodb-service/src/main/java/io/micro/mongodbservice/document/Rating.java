@@ -1,4 +1,4 @@
-package io.micro.musiccatalogservice.models;
+package io.micro.mongodbservice.document;
 
 public class Rating {
 

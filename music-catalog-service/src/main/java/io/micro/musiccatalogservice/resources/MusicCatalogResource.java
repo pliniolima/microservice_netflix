@@ -24,12 +24,12 @@ public class MusicCatalogResource {
     private WebClient.Builder webClientBuilder;
 
     @RequestMapping("/{userId}")
-    public List<MusicCatalogItem> getMusicCatalog(@PathVariable("userId") String userId) {
+    public List<MusicCatalogItem> getMusicCatalog(@PathVariable("userId") Integer userId) {
 
         UserRating userRating = restTemplate.getForObject("http://music-rating-service/ratings/users/" + userId, UserRating.class);
 
-        return userRating.getRatingList().stream().map(rating -> {
-            MusicInfo musicInfo = restTemplate.getForObject("http://music-info-service/musics/" + rating.getMovieId(), MusicInfo.class);
+        return userRating.getRatings().stream().map(rating -> {
+            MusicInfo musicInfo = restTemplate.getForObject("http://music-info-service/musics/" + rating.getMusicId(), MusicInfo.class);
 /*            MusicInfo musicInfo = webClientBuilder.build()
                     .get()
                     .uri("http://localhost:8082/musics/" + rating.getMovieId())

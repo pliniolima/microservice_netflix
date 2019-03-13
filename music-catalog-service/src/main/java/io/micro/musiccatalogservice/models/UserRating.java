@@ -4,20 +4,23 @@ import java.util.List;
 
 public class UserRating {
 
-    public UserRating() {
+    private Integer userId;
+
+    private List<Rating> ratings;
+
+    public Integer getUserId() {
+        return userId;
     }
 
-    public UserRating(List<Rating> ratingList) {
-        this.ratingList = ratingList;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
-    private List<Rating> ratingList;
-
-    public List<Rating> getRatingList() {
-        return ratingList;
+    public List<Rating> getRatings() {
+        return ratings;
     }
 
-    public void setRatingList(List<Rating> ratingList) {
-        this.ratingList = ratingList;
+    public void setRatings(List<Rating> ratings) {
+        this.ratings = ratings;
     }
 }

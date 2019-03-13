@@ -2,24 +2,16 @@ package io.micro.musicratingservice.models;
 
 public class Rating {
 
-    private String movieId;
+    private Integer musicId;
 
     private int rating;
 
-    public Rating() {
+    public Integer getMusicId() {
+        return musicId;
     }
 
-    public Rating(String movieId, int rating) {
-        this.movieId = movieId;
-        this.rating = rating;
-    }
-
-    public String getMovieId() {
-        return movieId;
-    }
-
-    public void setMovieId(String movieId) {
-        this.movieId = movieId;
+    public void setMusicId(Integer musicId) {
+        this.musicId = musicId;
     }
 
     public int getRating() {

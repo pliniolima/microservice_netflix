@@ -1,12 +1,26 @@
-package io.micro.musicratingservice.models;
+package io.micro.mongodbservice.document;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.math.BigInteger;
 import java.util.List;
 
+@Document
 public class UserRating {
 
+    @Id
     private Integer userId;
 
     private List<Rating> ratings;
+
+    public UserRating() {
+    }
+
+    public UserRating(Integer userId, List<Rating> ratings) {
+        this.userId = userId;
+        this.ratings = ratings;
+    }
 
     public Integer getUserId() {
         return userId;
